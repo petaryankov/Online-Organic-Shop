@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>Messages</title>
+    <th:block th:insert="~{/fragments/head}"></th:block>
+</head>
+
+<body>
+
+<div>
+    <th:block th:insert="~{/fragments/navigation}"></th:block>
+</div>
+
+<div class="container"
+     style="background-color: #406e3c;
+     border-radius: 25px;
+     font-family: Georgia, serif;
+     width: 80%;
+     margin-bottom: 60px;">
+
+    <h1  class="category-heading text-center text-white"> Messages</h1>
+
+    <table id="dtBasicExample" class="contact_messages-table"
+           style="width: 90%; margin-right: auto; margin-left: auto; margin-bottom: 0">
+
+        <tbody>
+
+        <tr class="row mb-2 mt-2 text-white" th:each="message : ${messages}">
+
+            <td th:text="*{message.createdOn}" style="font-weight: bold"> Created on</td>
+            <td th:text="*{message.subject}" style="font-weight: bold"> Subject</td>
+            <td th:text="*{message.name}" style="font-weight: bold"> Name</td>
+            <td th:text="*{message.email}">Email</td>
+            <td th:text="*{message.description}">Description</td>
+
+            <td sec:authorize="hasAuthority('ROLE_ADMIN')" style="margin-bottom:10px">
+
+                <form th:method="delete"
+                      th:action="@{/messages/delete/{id}(id=${message.id})}"
+                      th:object="${message}">
+                    <button class="order-button text-center text-decoration-none"
+                            type="submit" style="border-color: white"
+                    >Delete Message
+                    </button>
+                </form>
+
+            </td>
+
+
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<th:block th:insert="~{fragments/footer}"></th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

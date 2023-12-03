@@ -1,0 +1,63 @@
+body {
+    background-color: white;
+}
+
+.remove-button {
+    border-radius: 25px;
+    border-style: none;
+    text-decoration: none;
+    background-color: white;
+    color: #406e3c;
+    display: flex;
+}
+
+.price, .product-name {
+    width: 15%;
+}
+
+.description {
+    width: 55%;
+}
+
+.remove-button:hover {
+    background-color: #406e3c;
+    color: white;
+    transition: all 2000ms ease;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.container-cart {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.finalize-order {
+    margin-right: 200px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: #406e3c;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    width: 50%;
+}
+
+.finalize-order:hover {
+    background-color: #406e3c;
+    color: white;
+    transition: all 2000ms ease;
+}
+
+.button-detail-all:hover{
+    background-color: #406e3c;
+    color: white;
+
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>Home</title>
+    <th:block th:insert="~{/fragments/head}"></th:block>
+</head>
+
+<body>
+
+<div>
+    <th:block th:insert="~{/fragments/navigation}"></th:block>
+</div>
+
+<div class="col-5 float-start mx-lg-5">
+    <img alt="background image" src="/images/background.png" class="background-image">
+</div>
+
+<div class="col-5 float-end"
+     style="margin-top: 150px;
+text-align: center;
+padding: 10px;
+background-color: #406e3c;
+margin-right: 110px;
+margin-left: 0;
+border-radius: 25px;
+color: white">
+    <div sec:authorize="isAuthenticated() && hasAuthority('ROLE_USER') && !hasAnyAuthority('ROLE_ADMIN','ROLE_EMPLOYEE')">
+
+        <h3 style="font-family: Georgia, serif;">Hello, <span th:text="${name}"></span>!</h3>
+        <h3 style="font-family: Georgia, serif;" th:if="${orders.size()==0}">You don't have an active order!</h3>
+        <h3 style="font-family: Georgia, serif;" th:unless="${orders.size()==0}">Your order:</h3>
+        <table th:if="${orders.size()!=0}" class="table table-bordered"
+               style="width: 80%; margin-left:auto; margin-right: auto;">
+
+            <thead>
+
+            <tr style="background-color: #3a6661; color: white; font-family: Georgia, serif;">
+                <th scope="col" class="text-center">Id</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">Created on</th>
+                <th scope="col" class="text-center">Status</th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr th:each="order: ${orders}" th:object="${order}" style="font-family: Georgia, serif;">
+
+                <td scope="row" th:text="*{id}" class="text-center text-black" style="background-color: #e1d7cd">1</td>
+
+                <td th:text="|*{price} lv.|" class="text-center"
+                    style="background-color: #e1d7cd; color: black;">0.00
+                </td>
+
+                <td th:text="*{#temporals.format(createdOn,'dd-MM-yyyy')}" class="text-center"
+                    style="background-color: #e1d7cd">0.00
+                </td>
+
+                <td th:text="*{status.name()}" class="text-center" style="background-color: #e1d7cd">0.00</td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <h3 sec:authorize="isAuthenticated() && hasAnyAuthority('ROLE_ADMIN','ROLE_EMPLOYEE')"
+        style="font-family: Georgia, serif;
+        padding: 5px;
+        text-align: center;">
+        Hello, <span th:text="${name}"></span>!
+        Welcome to our organic online shop. It's time for work. </h3>
+
+
+    <h3 sec:authorize="!isAuthenticated()"
+        style="font-family: Georgia, serif;
+        padding: 5px;
+        text-align: center">
+        Welcome to our organic online shop. To make an order
+        <a th:href="@{/users/login}" style="color: #cbc196">login</a>
+        or <a th:href="@{/users/register}" style="color: #cbc196">register</a> .
+        If you want to check out all the products without registration click
+        <a th:href="@{/categories}" style="color: #cbc196">here</a> .
+    </h3>
+
+</div>
+
+<th:block th:insert="~{fragments/footer}"></th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+.profile-form{
+    margin-top: 200px;
+}
+
+.main-card{
+    width: 100%;
+}
+
+.edit-button-a{
+    background-color: white;
+    border-color: white;
+    color:#406e3c;
+    border-radius: 25px;
+    font-size: large;
+    width: 50%;
+}
+
+.edit-button-a:hover{
+    background-color:#406e3c;
+    color:white;
+    transition: all 2000ms ease;
+}

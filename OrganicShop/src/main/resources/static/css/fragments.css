@@ -1,0 +1,82 @@
+nav .navbar-brand {
+    margin-left: 30px;
+    width: 10%;
+}
+
+nav .logo {
+    width: 50%;
+    height: 80%;
+}
+
+nav .nav-link {
+    margin-top: 0;
+    height: 40px;
+    color: #406e3c;
+    font-weight: bolder;
+    padding-bottom: 24px;
+    width: 100%;
+}
+
+nav .nav-link:hover {
+    color: #f1eee9;
+    background-color: #406e3c;
+    border-radius: 25px;
+}
+
+nav .nav-link:focus {
+    color: #f1eee9;
+    background-color: #406e3c;
+}
+
+nav .dropdown-menu {
+    background-color: #406e3c;
+}
+
+nav .dropdown-item {
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+nav .dropdown-item:hover {
+    color: #406e3c;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 25px;
+}
+
+nav .nav-item {
+    font-weight: 450;
+    font-size: 17px;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
+nav .collapse {
+    margin-right: 0;
+}
+
+nav .navbar-nav {
+    margin-left: 0;
+    text-align: center;
+    font-size: 70px;
+    width: 100%;
+    display: flex;
+}
+
+nav {
+    height: 60px;
+    background-color: #e1d7cd;
+}
+
+footer {
+    width: 80%;
+    color: #406e3c;
+    position: fixed;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 20px;
+    bottom: 0;
+}

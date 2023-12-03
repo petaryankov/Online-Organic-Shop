@@ -1,0 +1,17 @@
+
+
+.delete-message-button {
+    background-color: white;
+    color: #406e3c;
+    border-radius: 10px;
+    border: none;
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+
+.delete-message-button:hover{
+    background-color:#2c504a;
+    color:white;
+    transition: all 2000ms ease
+}

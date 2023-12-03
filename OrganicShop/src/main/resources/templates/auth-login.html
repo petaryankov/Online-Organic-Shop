@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Login</title>
+    <th:block th:insert="~{/fragments/head}"></th:block>
+</head>
+
+<body>
+
+<div>
+    <th:block th:insert="~{/fragments/navigation}"></th:block>
+</div>
+
+<div class="col-5 float-start mx-lg-5">
+    <img alt="background image" src="/images/background.png" class="background-image">
+</div>
+
+<div class="col-5 float-end" style="font-family: Georgia, serif;">
+
+    <form th:method="post"
+          th:action="@{/users/login}"
+          class="main-form-login d-flex flex-column">
+
+        <div>
+            <p class="text-center text-white mt-3 mb-2 display-6">Login</p>
+        </div>
+
+        <div class="form-group mt-1">
+            <div class="label-holder text-white d-flex justify-content-start">
+                <label for="username" class="form-label text-white">Username</label>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   th:value="${username}"
+                   id="username"
+                   min="2" max="50"
+                   placeholder="Ex: user"
+                   name="username"/>
+        </div>
+
+        <div class="form-group mt-1">
+            <div class="label-holder text-white d-flex justify-content-start">
+                <label for="password" class="form-label text-white">Password</label>
+            </div>
+            <input type="password"
+                   class="form-control"
+                   id="password"
+                   min="2" max="50"
+                   placeholder="Enter password"
+                   name="password"/>
+        </div>
+
+        <div class="mt-2" style="margin-left: 25px;">
+            <input
+                    type="checkbox"
+                    id="remember-me"
+                    name="remember-me">
+            <span class="text-light">
+                    Remember me
+                </span>
+        </div>
+
+        <div class="form-group mt-1">
+            <div class="label-holder text-white d-flex justify-content-start">
+                <p th:if="${bad_credentials}" class="errors alert-danger">Invalid username or password.</p>
+            </div>
+        </div>
+
+        <div class="login-12 text-center mt-2 mb-3">
+            <button type="submit" class="btn">Login</button>
+        </div>
+
+    </form>
+
+</div>
+
+<th:block th:insert="~{fragments/footer}"></th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.products-table {
+    background-color: #406e3c;
+    border-radius: 25px;
+    width: 70%;
+    margin: 20px 15% 100px;
+}
+
+tr {
+    border-bottom: #424242;
+    border-style: solid;
+}
+
+.table-col {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+
+.table-head {
+    margin-bottom: 10px;
+}
+
+.order-button {
+    background-color: white;
+    color: #406e3c;
+    border-radius: 10px;
+    border: none;
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+
+.order-button:hover {
+    background-color: #2c504a;
+    color: white;
+    transition: all 2000ms ease
+}
+
