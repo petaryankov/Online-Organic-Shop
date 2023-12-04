@@ -17,7 +17,7 @@ public enum ValidationErrorMessages {
     public static final String INVALID_PHONE_NUMBER = "Phone number must be 10 digits!";
     public static final String INVALID_PRODUCT_NAME = "Product name must be at least 3 letters!";
     public static final String INVALID_ADDRESS = "Address must be 5 to 50 symbols!";
-    public static final String INVALID_USERNAME = "Username must be at least 4 characters and contains digit/s!";
+    public static final String INVALID_USERNAME = "Username must be 4 to 10 characters!";
     public static final String INVALID_PASSWORD = "Password must be at least 8 characters and contain digit/s!";
 
     public static final String MATCHING_PASSWORDS = "Password mismatch!";

@@ -62,7 +62,7 @@
                th:errorclass="is-invalid"
                class="form-control"
                id="username"
-               placeholder="Ex: ivaylo5@">
+               placeholder="Ex: user">
         <div class="invalid-feedback errors-register alert-danger" th:each="err :${#fields.errors('username')}"
              th:text="${err}"/>
       </div>

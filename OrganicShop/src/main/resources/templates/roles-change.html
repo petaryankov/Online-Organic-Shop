@@ -36,26 +36,25 @@
                     th:object="${role}">
 
                     <th scope="row" th:text="${role.name()}" class="text-center text-white"
-                        style="background-color: #93b5b1">1
+                        style="background-color: #e1d7cd">1
                     </th>
 
-                    <td style="background-color: #f4f1ed; font-weight:bold; text-align: center"
+                    <td style="background-color: #e1d7cd; font-weight:bold; text-align: center"
                         th:if="${#strings.equals(role.name(),'USER')}">
                         Not manageable
                     </td>
 
-                    <td style="background-color: #f4f1ed; font-weight: bold; text-align: center;"
+                    <td style="background-color: #e1d7cd; font-weight: bold; text-align: center;"
                         th:if="${#strings.equals(role.name(),'ADMIN')}">
                         Cannot be admin
                     </td>
 
-                    <td style="background-color: #f4f1ed; text-align: center;"
+                    <td style="background-color: #e1d7cd; text-align: center;"
                         th:if="${#strings.equals(role.name(),'EMPLOYEE')}">
                         <form th:method="PATCH"
                               th:action="@{/users/roles/add/{id}(id=${user.id})}"
                               th:object="${user}">
-                            <button class="button-detail" type="submit"
-                                    style="border-color: white;  background-color: #93b5b1;"
+                            <button class="button-detail"
                                     th:unless="${user.hasRoleEmployee()}"
                             >Add role
                             </button>
@@ -64,8 +63,7 @@
                         <form th:method="PATCH"
                               th:action="@{/users/roles/remove/{id}(id=${user.id})}"
                               th:object="${user}">
-                            <button class="button-detail" type="submit"
-                                    style="border-color: white;  background-color: #93b5b1;"
+                            <button class="button-detail"
                                     th:if="${user.hasRoleEmployee()}"
                             >Remove role
                             </button>

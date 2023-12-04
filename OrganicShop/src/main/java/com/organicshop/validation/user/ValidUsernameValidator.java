@@ -3,30 +3,20 @@ package com.organicshop.validation.user;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ValidUsernameValidator implements ConstraintValidator<ValidUsername, String> {
     @Override
     public boolean isValid(String value,
                            ConstraintValidatorContext context) {
 
-        if (value.length() < 4) {
-            return false;
-        }
+        //username must be 4 to 10 symbols and starts with letter
+        String regex = "^[A-Za-z]\\w{3,10}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(value);
 
-        int countDigits = 0;
-        int countLetters = 0;
+        return matcher.matches();
 
-        for (int i = 0; i < value.length(); i++) {
-
-            if (Character.isDigit(value.charAt(i))) {
-                countDigits++;
-            }
-
-            if(Character.isLetter(value.charAt(i))){
-                countLetters++;
-            }
-
-        }
-
-        return countDigits != 0 && countLetters != 0;
     }
 }

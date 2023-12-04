@@ -11,7 +11,8 @@ public class ValidEmailValidator implements ConstraintValidator<ValidEmail, Stri
     public boolean isValid(String value,
                            ConstraintValidatorContext context) {
 
-        Pattern pattern = Pattern.compile("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-]+)(\\.[a-zA-Z]{2,5}){1,2}$");
+        String regex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-]+)(\\.[a-zA-Z]{2,5}){1,2}$";
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(value);
 
         return matcher.find();
