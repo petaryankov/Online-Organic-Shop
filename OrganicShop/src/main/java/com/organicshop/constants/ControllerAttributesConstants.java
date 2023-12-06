@@ -16,7 +16,7 @@ public enum ControllerAttributesConstants {
     public static final String ALL_ORDERS = "allOrders";
     public static final String CART_PRODUCTS = "cartProducts";
     public static final String ID_ATR = "idAtr";
-    public static final String FOOD_PRICE = "foodPrice";
+    public static final String TOTAL_PRICE = "totalPrice";
     public static final String OBJECT_ID = "objectId";
     public static final String OBJECT_TYPE = "objectType";
 

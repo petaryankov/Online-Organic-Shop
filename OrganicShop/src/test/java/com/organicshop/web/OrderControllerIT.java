@@ -51,7 +51,7 @@ public class OrderControllerIT {
         mockMvc.perform(MockMvcRequestBuilders.get("/orders/finalize"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("finalize-order"))
-                .andExpect(model().attributeExists("foodPrice", "countProducts"));
+                .andExpect(model().attributeExists("totalPrice", "countProducts"));
 
     }
 

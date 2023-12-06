@@ -33,7 +33,7 @@ public class OrderController {
     public String getFinalizeOrder(Model model,
                                    Principal principal) {
 
-        model.addAttribute(FOOD_PRICE, this.orderService.getProductsPrice(principal.getName()));
+        model.addAttribute(TOTAL_PRICE, this.orderService.getProductsPrice(principal.getName()));
         model.addAttribute(COUNT_PRODUCTS, this.orderService.getProductsInTheCart(principal.getName()).size());
 
         return "finalize-order";
