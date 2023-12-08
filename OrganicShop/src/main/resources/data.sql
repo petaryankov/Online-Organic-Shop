@@ -1,18 +1,20 @@
 USE `organic_shop`;
 
-INSERT INTO `products` (name, price, description,category) VALUES ('Bio Bread Delba',4.39,
+INSERT INTO `products` (name, price, description,category) VALUES ('Bio Bread Delba',4.30,
                                                                    'Wholegrain and Rye With 3 Types of Seeds 500 g','bread');
-INSERT INTO `products` (name, price, description,category) VALUES ('Organic Toast Bread Zemela',4.89,
+INSERT INTO `products` (name, price, description,category) VALUES ('Organic Toast Bread Zemela',4.80,
                                                                    'Wholegrain 500 g','bread');
-INSERT INTO `products` (name, price, description,category) VALUES ('Organic Bread Schnitzer Rustic',12.99,
+INSERT INTO `products` (name, price, description,category) VALUES ('Organic Bread Schnitzer Rustic',12.90,
                                                                    'Buckwheat Gluten Free 500 g','bread');
-INSERT INTO `products` (name, price, description,category) VALUES ('Bio Crispy Bread Le Pain Des Fleurs',8.89,
+INSERT INTO `products` (name, price, description,category) VALUES ('Bio Crispy Bread Le Pain Des Fleurs',8.80,
                                                                    'Buckwheat Gluten Free 150 g','bread');
 
-INSERT INTO `products` (name, price, description,category) VALUES ('Milk Olympus',3.99,
+INSERT INTO `products` (name, price, description,category) VALUES ('Milk Olympus',3.90,
                                                                    'Bio Fresh Cow Milk Olympus 3,7% 1l','milk_products');
-INSERT INTO `products` (name, price, description,category) VALUES ('Milk Bioland',5.99,
+INSERT INTO `products` (name, price, description,category) VALUES ('Milk Bioland',5.90,
                                                                    'Organic Cow Milk Bioland 3,5% 1l','milk_products');
+INSERT INTO `products` (name, price, description,category) VALUES ('Cow Cheese Harmonica',12.80,
+                                                                   'Organic Cow Cheese Harmonica 400 g','milk_products');
 
 
 INSERT INTO `products` (name, price, description,category) VALUES ('Veal Neck',21.20,

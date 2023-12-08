@@ -62,6 +62,17 @@ public class OrderService {
 
     }
 
+    public BigDecimal getTotalPrice(String username) {
+
+        final UserEntity user = this.userService.getUserByUsername(username);
+        double deliveryFee = 5.50;
+        double bagFee = 0.1;
+
+        return user.getCart().getProductsSum()
+                .add(BigDecimal.valueOf(user.getCart().getCountProducts() * bagFee))
+                .add(BigDecimal.valueOf(deliveryFee));
+    }
+
     @Transactional
     public void makeOrder(OrderBindingDto orderDto,
                           String username) {
@@ -81,7 +92,7 @@ public class OrderService {
     private static void createOrder(OrderBindingDto orderDto,
                                     OrderEntity order,
                                     UserEntity user) {
-        double deliveryFee = 3.50;
+        double deliveryFee = 5.50;
         double bagFee = 0.1;
 
         BigDecimal price = user.getCart().getProductsSum()

@@ -37,7 +37,7 @@ color: white">
             <thead>
 
             <tr style="background-color: #3a6661; color: white; font-family: Georgia, serif;">
-                <th scope="col" class="text-center">Id</th>
+
                 <th scope="col" class="text-center">Price</th>
                 <th scope="col" class="text-center">Created on</th>
                 <th scope="col" class="text-center">Status</th>
@@ -48,8 +48,6 @@ color: white">
             <tbody>
 
             <tr th:each="order: ${orders}" th:object="${order}" style="font-family: Georgia, serif;">
-
-                <td scope="row" th:text="*{id}" class="text-center text-black" style="background-color: #e1d7cd">1</td>
 
                 <td th:text="|*{price} lv.|" class="text-center"
                     style="background-color: #e1d7cd; color: black;">0.00

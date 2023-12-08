@@ -20,7 +20,7 @@ public class ClosedInterceptor implements HandlerInterceptor {
         if (!requestURI.equals("/closed")) {
 
             LocalTime now = LocalTime.now();
-            int openTime = 8;
+            int openTime = 9;
             int closetTime = 22;
 
             if (openTime > now.getHour() || closetTime < now.getHour()) {

@@ -3,7 +3,8 @@ let addOrderButton = document.getElementById('orderButton');
 addOrderButton.addEventListener('click', onLoadCreateOrder);
 
 function onLoadCreateOrder() {
-    let orderId = document.getElementById('orderId').getAttribute('value');
+    let orderId = document.getElementById('orderId')
+        .getAttribute('value');
 
     let orderTableBody = document.getElementById('orderTableBody');
     orderTableBody.innerHTML = '';
@@ -12,9 +13,7 @@ function onLoadCreateOrder() {
         .then(response => response.json())
         .then(order => {
 
-
             let row = document.createElement('tr');
-
             let idCol = document.createElement('td');
             let clientCol = document.createElement('td');
             let priceCol = document.createElement('td');
