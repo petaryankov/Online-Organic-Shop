@@ -36,7 +36,7 @@ public class UserRegistrationBindingDto {
 
     private String confirmPassword;
 
-    @Positive
+    @ValidUserAge
     @NotNull(message = AGE_PROVIDED)
     private Integer age;
 

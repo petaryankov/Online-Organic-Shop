@@ -7,7 +7,8 @@ public enum ValidationErrorMessages {
     public static final String DESCRIPTION_REQUIRED = "Description is required!";
     public static final String SUBJECT_MINIMUM = "Subject must be at least 3 symbols!";
     public static final String DESCRIPTION_BETWEEN = "Description must be 5 to 2000 symbols!";
-    public static final String AGE_PROVIDED = "Age should be provided!";
+    public static final String AGE_PROVIDED = "Age is required!";
+    public static final String INVALID_AGE = "Age should be at least 18!";
 
     public static final String UNIQUE_USERNAME= "Username already in use!";
     public static final String UNIQUE_EMAIL= "Email already in use!";
