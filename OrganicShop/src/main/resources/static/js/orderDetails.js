@@ -3,7 +3,9 @@ let addOrderButton = document.getElementById('orderButton');
 addOrderButton.addEventListener('click', onLoadCreateOrder);
 
 function onLoadCreateOrder() {
-        addOrderButton.style.display = 'none';
+    // hide button after click
+    addOrderButton.style.display = 'none';
+
     let orderId = document.getElementById('orderId')
         .getAttribute('value');
 
