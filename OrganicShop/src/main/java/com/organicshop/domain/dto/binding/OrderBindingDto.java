@@ -11,6 +11,17 @@ public class OrderBindingDto {
     @ValidPhoneNumber
     private String contactNumber;
 
+
+    private Double deliveryFee = 4.20;
+    public Double getDeliveryFee() {
+        return deliveryFee;
+    }
+    private Double bagFee = 0.10;
+
+    public Double getBagFee() {
+        return bagFee;
+    }
+
     public OrderBindingDto() {
     }
 

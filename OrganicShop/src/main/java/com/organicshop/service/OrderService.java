@@ -63,14 +63,12 @@ public class OrderService {
     }
 
     public BigDecimal getTotalPrice(String username) {
-
+        OrderBindingDto orderBindingDto = new OrderBindingDto();
         final UserEntity user = this.userService.getUserByUsername(username);
-        double deliveryFee = 5.50;
-        double bagFee = 0.1;
 
         return user.getCart().getProductsSum()
-                .add(BigDecimal.valueOf(user.getCart().getCountProducts() * bagFee))
-                .add(BigDecimal.valueOf(deliveryFee));
+                .add(BigDecimal.valueOf(user.getCart().getCountProducts() * orderBindingDto.getBagFee()))
+                .add(BigDecimal.valueOf(orderBindingDto.getDeliveryFee()));
     }
 
     @Transactional
@@ -92,12 +90,10 @@ public class OrderService {
     private static void createOrder(OrderBindingDto orderDto,
                                     OrderEntity order,
                                     UserEntity user) {
-        double deliveryFee = 5.50;
-        double bagFee = 0.1;
 
         BigDecimal price = user.getCart().getProductsSum()
-                .add(BigDecimal.valueOf(user.getCart().getCountProducts() * bagFee))
-                .add(BigDecimal.valueOf(deliveryFee));
+                .add(BigDecimal.valueOf(user.getCart().getCountProducts() * orderDto.getBagFee()))
+                .add(BigDecimal.valueOf(orderDto.getDeliveryFee()));
 
         order
                 .setOwner(user)
