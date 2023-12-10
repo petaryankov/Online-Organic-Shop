@@ -16,6 +16,7 @@ The design is based on <a href="https://bootstrapmade.com/">Bootstrap</a>.
 
 # <p id="functionalities">Functionalities</p>
 Before registration or login people are able to review the products and send a message with the contact form.
+After registration, everyone automatically gets the "USER" role.
 
 - <strong>Users</strong>
   - ADMIN, EMPLOYEE, USER
