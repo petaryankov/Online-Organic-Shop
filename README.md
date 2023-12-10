@@ -3,8 +3,8 @@
 # Table of Contents
 - <a href="#about">About this Project</a>
 - <a href="#design">Design</a>
-
 - <a href="#functionalities">Functionalities</a>
+- <a href="#project-structure">Project Structure</a>
 
 
 # <p id="about">About this project</p>
@@ -46,3 +46,14 @@ and only the admin is able to change roles.
       - View its own cart
       - View its own personal information and edit names
       - View contact form and submit messages
+     
+      # <p id="project-structure">Project Structure</p>
+- Server
+
+  - **config** - files used to configure the application
+  - **exceptions** - files containing custom exceptions
+  - **model** - all database models used in the application
+  - **repository** - files directly accessing mySQL database and manipulating data
+  - **service** - all business logic used in the application
+  - **validation** - files containing customs validation logic
+  - **web** - controllers used to handle client requests
