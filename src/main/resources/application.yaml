@@ -7,7 +7,7 @@ server:
   error:
     whitelabel:
       enabled: false
-  port: 8080
+  port: 8081
 spring:
   sql:
     init:
