@@ -24,7 +24,7 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+#        dialect: org.hibernate.dialect.MySQLDialect    this is by default
         format_sql: true
   mvc:
     hidden-method:
